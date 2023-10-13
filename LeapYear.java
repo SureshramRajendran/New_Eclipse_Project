@@ -1,8 +1,8 @@
 public class LeapYear {
 public static void main(String[]args){
 
-int a=2020;
-if(a%4==0){
+int year=2020;
+if(year%4==0){
   System.out.println("This Year is Leap Year");
 }
 else{
