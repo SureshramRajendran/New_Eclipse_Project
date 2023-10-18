@@ -1,9 +1,9 @@
 pipeline {
     agent any {
         stages {
-            stage (build)
+            stage ('build')
             steps {
-                bat 'python -v'
+                bat 'python -V'
             }
         }
     }
@@ -12,16 +12,16 @@ pipeline {
             echo'Always'
         }
         success {
-            echo 'ONLY ON SUCCESS'
+            echo 'Only on Success'
         }
         failure {
-            echo 'ONLY ON FAILURE'
+            echo 'Only on Failure'
         }
         unstable {
-            echo 'ONLY IF RUN IS UNSTABLE'
+            echo 'Only if run is unstable'
         }
-        changes {
-            echo 'ONLY IF STATUS CHANGED FROM SUCCESS TO FAILURE OR VICE VERSA w.r.t last run'
+        changed {
+            echo 'Only if status changed from Success to failure or vice versa w.r.t. last run.'
         }
     }
 }
