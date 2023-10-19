@@ -31,5 +31,10 @@ pipeline {
                 )
             }
         }
+stage ('Release to production') {
+            steps {
+                bat 'echo Product release to production'
+                    }
+            }
      }
 }
