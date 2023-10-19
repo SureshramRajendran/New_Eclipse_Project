@@ -1,0 +1,49 @@
+pipeline {
+    agent any 
+        stages {
+            stage ('build') {
+            steps {
+                bat 'echo build in progress'
+                    }
+            }
+            stage ('unit tests') {
+            steps {
+                bat 'echo running unit tests'
+                    }
+            }
+            stage ('deploy') {
+            steps {
+                bat 'echo deploying build'
+                    }
+            }
+            stage ('Regression tests') {
+            
+                parallel{
+                    stage('chrome'){
+                       steps{
+                        bat 'echo running E2E tests on chrome'
+
+                       } 
+                    }
+                   stage('firefox'){
+                       steps{
+                        bat 'echo running E2E tests on firefox'
+
+                       } 
+                    }
+                    stage('safari'){
+                       steps{
+                        bat 'echo running E2E tests on safari'
+
+                       } 
+                    }
+                }
+            }
+            stage ('Release to production') {
+            steps {
+                bat 'echo product release to production'
+                    }
+            }
+        
+     }
+}
