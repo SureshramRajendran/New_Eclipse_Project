@@ -30,11 +30,6 @@ pipeline {
                     }
                 )
             }
-            stage ('stage5') {
-            steps {
-                echo 'stage 5'
-                    }
-            }
         }
      }
 }
