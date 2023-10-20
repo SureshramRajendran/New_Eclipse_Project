@@ -1,36 +1,20 @@
 pipeline {
     agent any 
+environment{
+fname = "Suresh"
+
+}
         stages {
-            stage ('stage1') {
+            stage ('one') {
             steps {
-                echo 'stage 1'
+                echo "Hello ${fname}"
                     }
             }
-            stage ('stage2') {
+            stage ('two') {
             steps {
-                echo 'stage 2'
+                echo "Hello ${fname}"
                     }
             }
-            stage ('stage3') {
-            steps {
-                echo 'stage 3'
-                    }
-            }
-            stage ('stage4') {
-            steps {
-                echo 'stage 4'
-                    }
-            }
-            stage ('stage5') {
-            steps {
-                echo 'stage 5'
-                    }
-            }
-        }
-    
-    post {
-        always{
-            echo'Always'
-        }
+         
     }
     }
