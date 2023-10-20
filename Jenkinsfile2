@@ -1,19 +1,20 @@
 pipeline {
     agent any 
+   
 
         stages {
             stage ('one') {
-environment{
-fname = "Suresh"
+        environment{
+            fname = "Suresh"
 
 }
             steps {
-                echo "Hello ${fname}"
+               bat 'echo Hello ${fname}''
                     }
             }
             stage ('two') {
             steps {
-                echo "Hello ${fname}"
+              bat  'echo Hello ${fname}''
                     }
             }
          
